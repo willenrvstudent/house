@@ -11,10 +11,17 @@
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
+    private Square basket;
+    private Square sqr1;
+    private Square sqr2;
+    private Square sqr3;
+    private Square sqr4;
+    private Person person;
+    private Square sand;
+    private Square sky;
+    private Triangle pyramid;
     private Circle sun;
+    private Circle balloon;
     private boolean drawn;
 
     /**
@@ -22,10 +29,17 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
+        basket = new Square();
+        sqr1 = new Square();
+        sqr2 = new Square();
+        sqr3 = new Square();
+        sqr4 = new Square();
+        person = new Person();
+        sand = new Square();
+        sky = new Square();
+        pyramid = new Triangle();  
         sun = new Circle();
+        balloon = new Circle();
         drawn = false;
     }
 
@@ -35,26 +49,69 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.makeVisible();
+            sand.moveHorizontal(-310);
+            sand.changeColor("sand");
+            sand.moveVertical(20);
+            sand.changeSize(550);
+            sand.makeVisible();
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
+            sky.moveHorizontal(-320);
+            sky.changeColor("skyBlue");
+            sky.moveVertical(-520);
+            sky.changeSize(550);
+            sky.makeVisible();
+            
+            balloon.changeColor("red");
+            balloon.moveHorizontal(45);
+            balloon.moveVertical(45);
+            balloon.changeSize(70);
+            balloon.makeVisible();
+            
+            person.moveHorizontal(30);
+            person.moveVertical(40);
+            person.changeSize(20, 15);
+            person.makeVisible();
+            
+            sqr1.moveHorizontal(-20);
+            sqr1.changeColor("blue");
+            sqr1.moveVertical(90);
+            sqr1.changeSize(5);
+            sqr1.makeVisible();
+            
+            sqr2.moveHorizontal(-15);
+            sqr2.changeColor("blue");
+            sqr2.moveVertical(105);
+            sqr2.changeSize(5);
+            sqr2.makeVisible();
+            
+            sqr3.moveHorizontal(15);
+            sqr3.changeColor("blue");
+            sqr3.moveVertical(90);
+            sqr3.changeSize(5);
+            sqr3.makeVisible();
+            
+            sqr4.moveHorizontal(10);
+            sqr4.changeColor("blue");
+            sqr4.moveVertical(105);
+            sqr4.changeSize(5);
+            sqr4.makeVisible();
     
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
+            basket.changeColor("blue");
+            basket.moveHorizontal(-10);
+            basket.moveVertical(120);
+            basket.changeSize(20);
+            basket.makeVisible();
+    
+            pyramid.changeSize(70, 90);
+            pyramid.changeColor("brown");
+            pyramid.moveHorizontal(-115);
+            pyramid.moveVertical(-30);
+            pyramid.makeVisible();
     
             sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
+            sun.moveHorizontal(120);
+            sun.moveVertical(-60);
+            sun.changeSize(50);
             sun.makeVisible();
             drawn = true;
         }
@@ -65,10 +122,17 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
+        sand.changeColor("black");
+        sky.changeColor("white");
+        pyramid.changeColor("black");
+        person.changeColor("white");
+        basket.changeColor("white");
+        balloon.changeColor("white");
         sun.changeColor("black");
+        sqr1.changeColor("white");
+        sqr2.changeColor("white");
+        sqr3.changeColor("white");
+        sqr4.changeColor("white");
     }
 
     /**
@@ -76,9 +140,16 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
+        sand.changeColor("sand");
+        sky.changeColor("skyBlue");
+        pyramid.changeColor("brown");
+        person.changeColor("black");
+        basket.changeColor("blue");
+        balloon.changeColor("red");
         sun.changeColor("yellow");
+        sqr1.changeColor("blue");
+        sqr2.changeColor("blue");
+        sqr3.changeColor("blue");
+        sqr4.changeColor("blue");
     }
 }
